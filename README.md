@@ -14,7 +14,10 @@
 
 Let's get started.
 
-## 3scale setup
+----------------------------------------------------------------------------------------------------
+
+## Setup 3scale on OpenShift
+
 First let's install 3scale 2.9 on OpenShift. There are various options around 
 - operator or template
 - storage
@@ -31,7 +34,6 @@ Setup this environment variable to be the home of this repo on your laptop.
 ```
 export REPO_HOME=`pwd`
 ```
-
 
 ### 3scale setup instructions
 Execute the following
@@ -78,10 +80,21 @@ Now time to open the 3scale Admin console. Go to _Networking->Routes_ and open t
 
 Use your ADMIN_USER and ADMIN_PASSWORD credentials from the previous step and log in.
 
+----------------------------------------------------------------------------------------------------
 
+## Setup a simple SOAP service on OpenShift
 
-
-
+We use a different repo for the SOAP and Fuse projects:
+__https://github.com/weimeilin79/3scale_development_labs.git__
+Clone that repo - and _cd_ into it.
+Overwrite this environment variable to be the home of this __new__ repo on your laptop.
+```
+export REPO_HOME=`pwd`
+```
+Setup a new project:
+```
+oc new-project soap-rest
+```
 
 
 
@@ -95,6 +108,7 @@ Use your ADMIN_USER and ADMIN_PASSWORD credentials from the previous step and lo
 
 
 ----------------------------------------------------------------------------------------------------
+
 - Spring Boot
 - Quarkus in JVM mode
 - Quarkus in Native mode
