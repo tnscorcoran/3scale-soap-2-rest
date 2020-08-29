@@ -165,6 +165,8 @@ In my case the _Private Endpoint_ was
 ```
 http://stores-soap.soap-rest.svc.cluster.local:8080
 ```
+This is a security benefit associated with backends on OpenShift. This _Service_ (svc.cluster.local) URL is not accessible outside OpenShift. So you need never expose your backend API to the outside world - only the secured route to it via 3scale.
+
 
 ## Update Product
 For simplicity, we're going to use our existing Product, called API. From the drop down menu on the top left hand side of the screen, choose _API_ which will cause the _Product: API_ to be selected.
@@ -173,10 +175,21 @@ For simplicity, we're going to use our existing Product, called API. From the dr
 Choose _Integration->Backends_ then delete the API Backend that's there then _Add Backend_
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/12-delete-add-backends.png)
 
-Add our SOAP Backend to our _API_ product with a pat of _/_as follows:
+Add our SOAP Backend to our _API_ product with a path of _/_as follows:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/13-add-backend-to-product.png)
 
 No you need to create a _*3scale method*_, so as to be able to record and control, rate limit etc, these SOAP requests. 
+
+From the top panel, navigate to: API: Stores SOAP Policy API -> Integration -> Methods & Metrics.
+
+Click New Method and populate with the following values:
+```
+Friendly name:  StoresWS
+System name:    stores/storesws
+Description:    Stores SOAP Web Service
+```
+A method will be used to track the number of hits on the SOAP API. You’ll see later in this lab how this method is not granular enough to track the number of hits on each SOAP operation.
+
 
 
 a Mapping Rule
