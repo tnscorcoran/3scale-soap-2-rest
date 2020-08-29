@@ -107,7 +107,7 @@ oc create -f $REPO_HOME/templates/stores-api.json
 ```
 Create the new application using the stores-api template:
 ```
-oc new-app --template=stores-soap --param HOSTNAME_HTTP=stores-api-$OCP_USERNAME.$OCP_WILDCARD_DOMAIN
+oc new-app --template=stores-soap --param HOSTNAME_HTTP=stores-api.$OCP_WILDCARD_DOMAIN
 ```
 
 
