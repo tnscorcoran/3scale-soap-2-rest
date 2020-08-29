@@ -199,14 +199,24 @@ Increment:          1
 ```
 
 Now move to the _Configuration_ screen and promote this change to our Nginx based _APICast_ gateway:
-![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/17-promote-apicast.png)
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/14-promote-apicast.png)
 
-Immediately, a sample CURL comand will appear. Copy this to your favourite SOAP API testing tool, Postman in my case:
-![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/18-apicast-curl.png)
+Immediately, a sample CURL comand will appear. Copy this for later use:
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/15-apicast-curl.png)
 
+Before we test our newly managed SOAP API, we need to change a setting on our Staging APIcast gateway. In order for it to perdiodically check the manager configuration every 5 seconds, and reconfigure itself if its configuration has changed. DO the following.
+- In OpenShift, select the 3scale project.
+- Navigate to Workloads-> Deployment Configs -> apicast-staging -> Environment tab. Make the following change:
+```
+APICAST_CONFIGURATION_LOADER:           boot
+APICAST_CONFIGURATION_CACHE:            5
+```
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/16-dc-apicast.png)
 
+Save it - and it will recreate the pod.
 
-
+Now go to your favourite SOAP API testing tool, Postman in my case and paste in the curl command just copied. Append the path _/StoresWS_
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/17-postman-apicast.png)
 
 
 
