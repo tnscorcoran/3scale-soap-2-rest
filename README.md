@@ -136,6 +136,27 @@ Test it out in your favour SOAP API testing tool. I use postman:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/8-postman-soap-direct.png)
 
 
+----------------------------------------------------------------------------------------------------
+
+## Manage that SOAP service in 3scale
+
+First we need to create the API Gateway Staging Route. To begin with we'll set an environmental variable to hold our 3scale OpenShift project:
+```
+export GW_PROJECT=3scale
+```
+
+====================In OpenShift, select the 3scale project
+In 3scale, which you should already have logged into above, select _Dashboard_ then _Backends_
+
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/9-3scale-dashboard-backends.png)
+
+
+
+
+
+
+
+
 
 
 
