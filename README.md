@@ -254,6 +254,29 @@ Now to verify this call has been managed and is reporting to the new metric, on 
 
 (incidentally, you can also rate limit and monetise on this metric)
 
+## Setup a RESTful interface to our SOAP service
+Now we're going to deploy a transformation service that exposes the SOAP Service as a RESTful API.
+Execute the following:
+```
+oc create -f $REPO_HOME/templates/stores-fis.json
+oc new-app --template=stores-fis --param ROUTE_HOST=stores-fis.$OCP_WILDCARD_DOMAIN
+```
+This takes a few minutes as it's a Maven build that downloads many dependencies
+Execute this periodically until _stores-fis-1-xxxxx_ is Ready with 1/1.
+```
+oc get pods
+```
+When that's ready, get the OpenShift route to this _Stores-FIS_ 
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/20-stores-fis-route.png)
+
+
+
+
+
+
+
+
+
 ----------------------------------------------------------------------------------------------------
 
 
