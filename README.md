@@ -123,7 +123,15 @@ Test Stores SOAP Service by navigating to _Networking->Routes_ in the OpenShift 
 
 _http://stores-api.apps.cluster-datagrid-7970.datagrid-7970.sandbox961.opentlc.com/StoresWS?wsdl_
 
+The WSDL for this service should appear in your browser.
 
+There are various services out there for generating sample SOAP requests from a WSDL file. You can use one of those but for simplicity, here is one for the _getAllStores_ operation on this SOAP service:
+```
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:stor="http://www.rhmart.com/Stores/">
+<soapenv:Header/>
+<soapenv:Body><stor:getAllStores/></soapenv:Body>
+</soapenv:Envelope>
+```
 
 
 
