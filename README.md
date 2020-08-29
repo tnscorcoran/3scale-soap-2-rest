@@ -23,8 +23,8 @@ For simplicity, I'll be using the 3scale operator and S3 for storage. I will pro
 ### Pre-requisites
 - in my case, an S3 implemenation. I'll use Amazon S3.
 - in my case, I'll use the Red Hat producised 3scale, for which you'll need an account at [https://access.redhat.com](https://access.redhat.com/) to pull the supported, productised images. You can alternatively use the Community operator for which no Red Hat credentials are required.
-- an OpenShift 4 cluster - in my case 4.5.
-- the _oc_ client installed locally (e.g. on your laptop) logged into OpenShift.
+- an OpenShift 4 cluster - in my case 4.5 with Administrative access.
+- the _oc_ client installed locally (e.g. on your laptop) logged in as an Administrator to OpenShift.
 - this repo cloned - and _cd_ into it.
 
 Setup this environment variable to be the home of this repo on your laptop.
@@ -53,9 +53,9 @@ oc create secret docker-registry threescale-registry-auth \
 --docker-password="yourpassword"
 ```
 
+On the OpenShift web console, select the 3scale project. Navigate to _Operators->Operator Hub_. Search for _3scale_ and select the _Red Hat Integration - 3scale_ operator
 
-
-
+![](https://github.com/tnscorcoran/springboot-quarkus-serverless/blob/master/images/01-springboot-startup.png)
 
 
 
