@@ -157,10 +157,13 @@ Name:               Stores SOAP Policy Backend
 System Name:        stores-soap-policy-backend
 Description:        Stores SOAP Policy Backend
 Private Endpoint:   Populate with the output of the following:
-                    echo -en "\n\nhttp://stores-soap.$OCP_USERNAME-stores-api.svc.cluster.local:8080\n"
+                    echo -en "\n\nhttp://stores-soap.soap-rest.svc.cluster.local:8080\n"
 
 ```
-
+In my case the _Private Endpoint_ was
+```
+http://stores-soap.soap-rest.svc.cluster.local:8080
+```
 
 
 
