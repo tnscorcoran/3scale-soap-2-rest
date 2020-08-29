@@ -114,10 +114,15 @@ Create the new application using the stores-api template:
 oc new-app --template=stores-soap --param HOSTNAME_HTTP=stores-api.$OCP_WILDCARD_DOMAIN
 ```
 
-Run this occasionally (maybe every 30 seconds) until: 1)stores-soap-1-xxx and 2)storesdb-1-xxx and both are Ready 1/1:
+Run this occasionally (maybe every 30 seconds) until: 1)stores-soap-1-xxx and 2)storesdb-1-xxx are both Ready 1/1:
 ```
 oc get pods
 ```
+
+Test Stores SOAP Service by navigating to _Networking->Routes_ in the OpenShift web console. Copy the location URL and append _/StoresWS?wsdl_ to it and test that in a browser. e.g. mine was:
+
+_http://stores-api.apps.cluster-datagrid-7970.datagrid-7970.sandbox961.opentlc.com/StoresWS?wsdl_
+
 
 
 
