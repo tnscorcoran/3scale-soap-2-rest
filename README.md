@@ -93,10 +93,10 @@ Overwrite this environment variable to be the home of this __new__ repo on your 
 ```
 export REPO_HOME=`pwd`
 ```
-We're going to need to use our OpenShift wildcard domain - so let's export a variable for it. It will be something like __apps.<your openshift hostname>.com__ and will be retriavable from the address bar of the browser tab where you're logged into OpenShift.
-
-export OCP_WILDCARD_DOMAIN=apps.cluster-ccn-c8cf.ccn-c8cf.sandbox47.opentlc.com
-
+We're going to need to use our OpenShift wildcard domain - so let's export a variable for it. It will be something like __apps.<your openshift hostname>.com__ and will be retriavable from the address bar of the browser tab where you're logged into OpenShift. Execute this with yours:
+```
+export OCP_WILDCARD_DOMAIN=__apps.<your openshift hostname>.com__
+```
 Setup a new project:
 ```
 oc new-project soap-rest
