@@ -190,7 +190,7 @@ Description:    Stores SOAP Web Service
 ```
 A method will be used to track the number of hits on the SOAP API. You’ll see later in this lab how this method is not granular enough to track the number of hits on each SOAP operation.
 
-Next we need to map incoming request to this new method. From the top panel, navigate to: API -> Integration -> Mapping Rules.
+Next we need to map incoming request to this new method. From the top panel, navigate to: API -> Integration -> Mapping Rules. Click _Add Mapping Rule_ and create one as follows:
 ```
 Verb:               POST
 Pattern:            /StoresWS
