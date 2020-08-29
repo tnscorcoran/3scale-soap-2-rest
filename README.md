@@ -55,7 +55,7 @@ oc create secret docker-registry threescale-registry-auth \
 
 On the OpenShift web console, select the 3scale project. Navigate to _Operators->Operator Hub_. Search for _3scale_ and select the _Red Hat Integration - 3scale_ operator
 
-![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/1-3scale-operator.png)
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/2-3scale-operator.png)
 
 
 
