@@ -148,7 +148,7 @@ export GW_PROJECT=3scale
 ====================In OpenShift, select the 3scale project
 In 3scale, which you should already have logged into above, select _Dashboard_ then _Backends_
 
-![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/9-3scale-dashboard-backends.png)
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/10-3scale-dashboard-backends.png)
 
 
 
