@@ -45,8 +45,13 @@ oc apply -f $REPO_HOME/1-3scale-setup/secret-s3.yaml
 For more on S3 for 3scale storage see [S3 3scale storage](https://access.redhat.com/documentation/en-us/red_hat_3scale_api_management/2.9/html/installing_3scale/install-threescale-on-openshift-guide#amazon_simple_storage_service_3scale_emphasis_filestorage_emphasis_installation)
 
 
-
-
+Create a secret using your [https://access.redhat.com](https://access.redhat.com/) credentials
+```
+oc create secret docker-registry threescale-registry-auth \
+--docker-server=registry.redhat.io \
+--docker-username="yourusername" \
+--docker-password="yourpassword"
+```
 
 
 
