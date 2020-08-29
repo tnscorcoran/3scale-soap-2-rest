@@ -198,7 +198,7 @@ Metric or Method:   StoresWS
 Increment:          1
 ```
 
-Now promote this change to our Nginx based _APICast_ gateway:
+Now move to the _Configuration_ screen and promote this change to our Nginx based _APICast_ gateway:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/17-promote-apicast.png)
 
 Immediately, a sample CURL comand will appear. Copy this to your favourite SOAP API testing tool, Postman in my case:
