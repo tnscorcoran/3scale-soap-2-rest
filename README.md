@@ -151,7 +151,7 @@ In 3scale, which you should already have logged into above, select _Dashboard_ t
 
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/10-3scale-dashboard-backends.png)
 
-## Create Backend
+### Create Backend
 Click NEW BACKEND. Populate the form with the following details:
 ```
 Name:               Stores SOAP Policy Backend
@@ -168,7 +168,7 @@ http://stores-soap.soap-rest.svc.cluster.local:8080
 This is a security benefit associated with backends on OpenShift. This _Service_ (svc.cluster.local) URL is not accessible outside OpenShift. So you need never expose your backend API to the outside world - only the secured route to it via 3scale.
 
 
-## Update Product
+### Update Product
 For simplicity, we're going to use our existing Product, called API. From the drop down menu on the top left hand side of the screen, choose _API_ which will cause the _Product: API_ to be selected.
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/11-api-product.png)
 
@@ -215,18 +215,39 @@ APICAST_CONFIGURATION_CACHE:            5
 
 Save it - and it will recreate the pod.
 
-Now go to your favourite SOAP API testing tool, Postman in my case and paste in the curl command just copied. Append the path _/StoresWS_
+Now go to your favourite SOAP API testing tool, Postman in my case and paste in the curl command just copied. Append the path _/StoresWS_ and test out the API. All going well you now have an authenticated/authorised API!
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/17-postman-apicast.png)
 
 
+### Manage that SOAP service in 3scale - fine grained
+If we want to track, control access, rate limit etc, individual operations, we need a further step.
 
+To do this we use the SOAPAction header on the client side and use extra method(s) and the SOAP APICast policy on the manager (which gets propagaed to APICast as configured earlier with our 5 second interval).
 
+I'm going to use the _Get All Stores_ operation as an example.
 
+### Create new method
+From the top panel, navigate to: Stores SOAP Policy API -> Integration -> Methods & Metrics.
+Click New Metric and populate as follows:
+```
+Friendly name:  GetAllStores
+System Name:    Stores/getAllStores
+Unit:           hits
+```
 
+Now we configure the SOAP Policy. Navigate to: Stores SOAP Policy API → Integration → Configuration → edit APIcast configuration. Expand the Policies section. In the Policy Chain section, click Add Policy and select SOAP.
+In the Policy Chain section, use the up or down arrows to reorder the policies so that the SOAP policy is first, followed by the APIcast policy. Enter the following mapping rule:
+```
+Delta:              1
+metric_system_name: Stores/getAllStores
+Pattern:            /Stores/getAllStores
+```
+Now on the same 3scale screen, update your Policy, then update your Policy Chain.
+Next on the menu on the left, go to Integration -> Configuration and _Promote to Staging_ as you did above. 
+5 seconds later, your APICast gateway will have pulled down your configuration of fine grained SOAP API Management.
 
-
-
-
+Now go to your favourite SOAP API testing tool, Postman in my case. Create new request, a copy of the previous coarse grained APICast request, this time passing in the SOAPAction header __ as shown:
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/18-postman-apicast-soapaction.png)
 
 
 ----------------------------------------------------------------------------------------------------
