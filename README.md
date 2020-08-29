@@ -280,7 +280,10 @@ BASEURL=https://raw.githubusercontent.com/jboss-fuse/application-templates/appli
 oc replace -n openshift -f ${BASEURL}/fis-image-streams.json
 oc new-app -f ${BASEURL}/fuse-console-namespace-os4.json
 ```
-
+Again this may take a few minutes. Run this periodically until _fuse77-console-1-xxxxx_ is Ready with 1/1:
+```
+oc get pods
+```
 
 
 
