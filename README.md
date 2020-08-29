@@ -18,6 +18,7 @@ Let's get started.
 First let's install 3scale 2.9 on OpenShift. There are various options around 
 - operator or template
 - storage
+
 For simplicity, I'll be using the 3scale operator and S3 for storage. I will provide requisite instructions to do this on this README, but for more details see [deploying-threescale-using-the-operator](https://access.redhat.com/documentation/en-us/red_hat_3scale_api_management/2.9/html/installing_3scale/install-threescale-on-openshift-guide#deploying-threescale-using-the-operator) 
 ### Pre-requisites
 - in my case, an S3 implemenation. I'll use Amazon S3.
