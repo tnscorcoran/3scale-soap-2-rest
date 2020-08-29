@@ -1,4 +1,10 @@
 # 3scale / Fuse SOAP and SOAP to REST demo
+
+
+# TODO
+# TODO - delete my URLS
+
+
 ## In this demo we 
 - setup 3scale on OpenShift
 - setup a simple SOAP service on OpenShift
@@ -9,8 +15,13 @@
 Let's get started.
 
 ## 3scale setup
-
-
+First let's install 3scale 2.9 on OpenShift. There are various options around 
+- operator or template
+- storage
+For simplicity, I'll be using the 3scale operator and S3 for storage.
+### Pre-requisites
+- in my case, an S3 implemenation. I'll use Amazon S3.
+- in my case, I'll use the Red Hat producised 3scale, for which you'll need an account at [https://access.redhat.com](https://access.redhat.com/) to pull the supported, productised images. You can alternatively use the Community operator for which no Red Hat credentials are required.
 
 
 
