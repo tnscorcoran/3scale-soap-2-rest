@@ -272,6 +272,16 @@ When that's ready, copy the OpenShift route to this _Stores-FIS_ (with the proje
 Now in Postman, or your equivalent, make the API call. Simply append _/allstores_ to the route URL yoiu just copied:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/21-stores-fis-postman.png)
 
+### Setup the Fuse Console to view the Camel routes used to do the transformation.
+
+Execute the following
+```
+BASEURL=https://raw.githubusercontent.com/jboss-fuse/application-templates/application-templates-2.1.0.fuse-770012-redhat-00004
+oc replace -n openshift -f ${BASEURL}/fis-image-streams.json
+oc new-app -f ${BASEURL}/fuse-console-namespace-os4.json
+```
+
+
 
 
 
