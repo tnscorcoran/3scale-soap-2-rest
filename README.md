@@ -8,7 +8,8 @@
 ## In this demo we 
 - setup 3scale on OpenShift
 - setup a simple SOAP service on OpenShift
-- manage that SOAP service in 3scale
+- manage that SOAP service in 3scale - coarse grained
+- manage that SOAP service in 3scale - fine grained
 - setup a RESTful interface to our SOAP service (through Fuse transformation)  on OpenShift
 - manage that REST API in 3scale
 
@@ -138,7 +139,7 @@ Test it out in your favour SOAP API testing tool. I use postman:
 
 ----------------------------------------------------------------------------------------------------
 
-## Manage that SOAP service in 3scale
+## Manage that SOAP service in 3scale - coarse grained
 
 First we need to create the API Gateway Staging Route. To begin with we'll set an environmental variable to hold our 3scale OpenShift project:
 ```
@@ -150,9 +151,15 @@ In 3scale, which you should already have logged into above, select _Dashboard_ t
 
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/10-3scale-dashboard-backends.png)
 
+Click NEW BACKEND. Populate the form with the following details:
+```
+Name:               Stores SOAP Policy Backend
+System Name:        stores-soap-policy-backend
+Description:        Stores SOAP Policy Backend
+Private Endpoint:   Populate with the output of the following:
+                    echo -en "\n\nhttp://stores-soap.$OCP_USERNAME-stores-api.svc.cluster.local:8080\n"
 
-
-
+```
 
 
 
