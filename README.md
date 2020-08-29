@@ -65,8 +65,7 @@ Your display will change to _Installed Operators_. A couple of minutes later the
 Select the _Red Hat Integration - 3scale_ operator.
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/4-installed-3scale-operator.png)
 
-Click _Create Instance_ on the _API Manager_ box. You need to overwrite the yaml that's on the screen. Overwrite with your modified _
-$REPO_HOME/1-3scale-setup/threescale.yaml_. You'll just need to modify what's highlighted - which you can get in the address on your brower tab that's logged into OpenShift:
+Click _Create Instance_ on the _API Manager_ box. You need to overwrite the yaml that's on the screen. Overwrite with your modified __REPO_HOME/1-3scale-setup/threescale.yaml__ . You'll just need to modify what's highlighted - which you can get in the address on your brower tab that's logged into OpenShift:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/5-threescale.yaml.png)
 Click Create then navigate to _Workloads->Pods_. A few minutes later all pods should be Running and 1/1 or 3/3 under Ready.
 
