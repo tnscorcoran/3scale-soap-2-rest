@@ -151,6 +151,7 @@ In 3scale, which you should already have logged into above, select _Dashboard_ t
 
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/10-3scale-dashboard-backends.png)
 
+## Create Backend
 Click NEW BACKEND. Populate the form with the following details:
 ```
 Name:               Stores SOAP Policy Backend
@@ -164,6 +165,11 @@ In my case the _Private Endpoint_ was
 ```
 http://stores-soap.soap-rest.svc.cluster.local:8080
 ```
+
+## Update Product
+For simplicity, we're going to use our existing Product, called API. From the drop down menu on the top left hand side of the screen, choose _API_ which will cause the _Product: API_ to be selected.
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/11-api-product.png)
+
 
 
 
