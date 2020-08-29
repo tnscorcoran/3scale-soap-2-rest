@@ -180,7 +180,7 @@ Add our SOAP Backend to our _API_ product with a path of _/_as follows:
 
 No you need to create a _*3scale method*_, so as to be able to record and control, rate limit etc, these SOAP requests. 
 
-From the top panel, navigate to: API: Stores SOAP Policy API -> Integration -> Methods & Metrics.
+From the top panel, navigate to: API -> Integration -> Methods & Metrics.
 
 Click New Method and populate with the following values:
 ```
@@ -190,7 +190,13 @@ Description:    Stores SOAP Web Service
 ```
 A method will be used to track the number of hits on the SOAP API. You’ll see later in this lab how this method is not granular enough to track the number of hits on each SOAP operation.
 
-
+Next we need to map incoming request to this new method. From the top panel, navigate to: API -> Integration -> Mapping Rules.
+```
+Verb:               POST
+Pattern:            /StoresWS
+Metric or Method:   StoresWS
+Increment:          1
+```
 
 a Mapping Rule
 
