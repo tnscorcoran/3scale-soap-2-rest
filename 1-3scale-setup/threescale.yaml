@@ -1,0 +1,13 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+  name: 3scale
+  namespace: 3scale
+spec:
+  wildcardDomain: amp.apps.my-cluster.com
+  resourceRequirementsEnabled: false
+  system:
+    fileStorage:
+      simpleStorageService:
+        configurationSecretRef:
+          name: aws-auth
