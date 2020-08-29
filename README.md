@@ -132,6 +132,22 @@ There are various services out there for generating sample SOAP requests from a 
 <soapenv:Body><stor:getAllStores/></soapenv:Body>
 </soapenv:Envelope>
 ```
+Test it out in your favour SOAP API testing tool. I use postman:
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/8-postman-soap-direct.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
