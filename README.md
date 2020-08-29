@@ -246,7 +246,7 @@ Now on the same 3scale screen, update your Policy, then update your Policy Chain
 Next on the menu on the left, go to Integration -> Configuration and _Promote to Staging_ as you did above. 
 5 seconds later, your APICast gateway will have pulled down your configuration of fine grained SOAP API Management.
 
-Now go to your favourite SOAP API testing tool, Postman in my case. Create new request, a copy of the previous coarse grained APICast request, this time passing in the SOAPAction header __ as shown:
+Now go to your favourite SOAP API testing tool, Postman in my case. Create new request, a copy of the previous coarse grained APICast request, this time passing in the SOAPAction header _http://www.rhmart.com/Stores/getAllStores_ as shown:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/18-postman-apicast-soapaction.png)
 
 
