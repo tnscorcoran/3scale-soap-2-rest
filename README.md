@@ -266,8 +266,11 @@ Execute this periodically until _stores-fis-1-xxxxx_ is Ready with 1/1.
 ```
 oc get pods
 ```
-When that's ready, get the OpenShift route to this _Stores-FIS_ 
+When that's ready, copy the OpenShift route to this _Stores-FIS_ (with the project soap-rest selected as shown)
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/20-stores-fis-route.png)
+
+Now in Postman, or your equivalent, make the API call. Simply append _/allstores_ to the route URL yoiu just copied:
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/21-stores-fis-postman.png)
 
 
 
