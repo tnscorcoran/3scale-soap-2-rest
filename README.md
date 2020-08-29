@@ -198,9 +198,6 @@ Metric or Method:   StoresWS
 Increment:          1
 ```
 
-a Mapping Rule
-
-
 Now promote this change to our Nginx based _APICast_ gateway:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/17-promote-apicast.png)
 
