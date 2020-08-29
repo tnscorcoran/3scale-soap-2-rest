@@ -170,8 +170,11 @@ http://stores-soap.soap-rest.svc.cluster.local:8080
 For simplicity, we're going to use our existing Product, called API. From the drop down menu on the top left hand side of the screen, choose _API_ which will cause the _Product: API_ to be selected.
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/11-api-product.png)
 
+Choose _Integration->Backends_ then delete the API Backend that's there then _Add Backend_
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/12-delete-add-backends.png)
 
-
+Next, add our SOAP Backend to our _API_ product as follows:
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/13-add-backend-to-product.png)
 
 
 
