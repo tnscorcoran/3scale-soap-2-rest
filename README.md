@@ -345,9 +345,16 @@ In my case, my _Private Base URL_ is: http://stores-fis.soap-rest.svc.cluster.lo
 Now we'll add the new Backend to our _API_ Product. With _Product: API_ selected on the top of the screen, navigate to Integration -> Backends and click _Add Backend_. Populate as follows, adding the new SOAP to REST backend with the path _/rest_:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/26-soap-to-rest-add-backend-to-product.png)
 
+Now promote this to Staging as before on screen Integration -> Configuration. 
 
+Finally, test the API, in my case with Postman. Use the same APICast route and _user key_ as above and prepend _/rest_ to the path to this endpoint as shown (APIcast uses _path-based-routing_ with the _/rest_ URL fragment to select our backend):
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/27-postman-3scale-soap-2-rest.png)
+
+
+## Conclusion
+In this demo, we showcase how to use setup and use 3scale and Red Hat Integration to to manage SOAP APIs on OpenShift. Specifically: 
+- setup a SOAP service and manage it in 3scale - coarse grained
+- manage the SOAP service in 3scale - fine grained
+- setup and manage a RESTful interface to a SOAP service
 ----------------------------------------------------------------------------------------------------
-
-
-
 ----------------------------------------------------------------------------------------------------
