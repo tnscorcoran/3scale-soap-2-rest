@@ -285,11 +285,33 @@ Again this may take a few minutes. Run this periodically until _fuse77-console-1
 oc get pods
 ```
 
+Create a secret using your [https://access.redhat.com](https://access.redhat.com/) credentials in the _soap-rest_ project
+```
+oc project soap-rest
+oc create secret docker-registry threescale-registry-auth \
+--docker-server=registry.redhat.io \
+--docker-username="yourusername" \
+--docker-password="yourpassword"
+oc secrets link default my-registry-auth --for=pull
+oc secrets link builder my-registry-auth --for=pull
+```
 
+Set these variables on the _stores-fis_  deployment config to allow insecure connection from the Fuse console to the _Stores-Fis_ transformation service;
+```
+oc set env dc/stores-fis \
+    AB_JOLOKIA_AUTH_OPENSHIFT=false \
+    AB_JOLOKIA_PASSWORD_RANDOM=false \
+    AB_JOLOKIA_OPTS=useSslClientAuthentication=false,protocol=https
+```
 
-
-
-
+Now manually add this port to the _stores-fis_ Service
+```
+    - name: jolokia
+      protocol: TCP
+      port: 8778
+      targetPort: 8778
+```
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/22-stores-fis-service.png)
 
 
 
