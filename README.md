@@ -312,7 +312,7 @@ oc set env dc/stores-fis \
     AB_JOLOKIA_OPTS=useSslClientAuthentication=false,protocol=https
 ```
 
-Now manually add this port to the _stores-fis_ Service
+Now manually add this port to the _stores-fis_ Service yaml:
 ```
     - name: jolokia
       protocol: TCP
@@ -321,6 +321,8 @@ Now manually add this port to the _stores-fis_ Service
 ```
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/22-stores-fis-service.png)
 
+Now go to Networking-> Routes and open the Fuse Console route. Use your OpenShift admin credentials and accept the permissions confirmation. You'll see this screen. Click _Connect_ on the _stores-fis-xxxx_ row
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/23-fuse-console-1.png)
 
 ----------------------------------------------------------------------------------------------------
 
