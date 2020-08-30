@@ -274,9 +274,8 @@ Now in Postman, or your equivalent, make the API call. Simply append _/allstores
 
 ### Setup the Fuse Console to view the Camel routes used to do the transformation.
 
-
 Create a cert and key as described on page 
-[generate-certificate-openshift4](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.5/html-single/fuse_on_openshift_guide/index#fuse-console-generate-certificate-openshift4)
+[generate-certificate-openshift4](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.7/html-single/fuse_on_openshift_guide/index#fuse-console-generate-certificate-openshift4)
 
 Then create a secret using them:
 ```
