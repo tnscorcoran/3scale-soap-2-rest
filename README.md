@@ -347,7 +347,7 @@ Now we'll add the new Backend to our _API_ Product. With _Product: API_ selected
 
 Now promote this to Staging as before on screen Integration -> Configuration. 
 
-Finally, test the API, in my case with Postman. Use the same APICast route and _user key_ as above and prepend _/rest_ to the path to this endpoint as shown (APIcast uses _path-based-routing_ with the _/rest_ URL fragment to select our backend):
+Finally, test the API, in my case with Postman. Use the same APICast route and _user key_ as above and prepend _/rest_ to the _/allstores_ path as shown (APIcast uses _path-based-routing_ with the _/rest_ URL fragment to select our backend):
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/27-postman-3scale-soap-2-rest.png)
 
 
