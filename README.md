@@ -328,6 +328,18 @@ You can now see get a visual representation of the Camel routes used to do the S
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/25-fuse-console-2-get-all-stores.png)
 
 
+## Manage that REST API in 3scale
+
+The final piece of the puzzle is applying API Management to our RESTful interface to the SOAP backend.
+
+Let's first add a backend in 3scale to our REST service. As described above, navigate to Dashboard -> BACKENDS and click NEW BACKEND. Populate the form with the following details:
+```
+Name:               Stores SOAP Transformation Backend
+System Name:        stores-soap-trans-backend
+Description:        Stores SOAP transformation Backend
+Private Base URL:   Populate with the output of the following:
+                    echo -en "\n\nhttp://stores-fis.$OCP_USERNAME-stores-api.svc.cluster.local:8080\n"
+```
 
 ----------------------------------------------------------------------------------------------------
 
