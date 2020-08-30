@@ -324,6 +324,11 @@ Now manually add this port to the _stores-fis_ Service yaml:
 Now go to Networking-> Routes and open the Fuse Console route. Use your OpenShift admin credentials and accept the permissions confirmation. You'll see this screen. Click _Connect_ on the _stores-fis-xxxx_ row
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/24-fuse-console-1.png)
 
+You can now see get a visual representation of the Camel routes used to do the SOAP / REST transformation, e.g. Get All Stores:
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/25-fuse-console-2-get-all-stores.png)
+
+
+
 ----------------------------------------------------------------------------------------------------
 
 
