@@ -274,6 +274,15 @@ Now in Postman, or your equivalent, make the API call. Simply append _/allstores
 
 ### Setup the Fuse Console to view the Camel routes used to do the transformation.
 
+
+Create a cert and key as described on page 
+[generate-certificate-openshift4](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.5/html-single/fuse_on_openshift_guide/index#fuse-console-generate-certificate-openshift4)
+
+Then create a secret using them:
+```
+oc create secret tls fuse75-console-tls-proxying --cert server.crt --key server.key
+```
+
 Execute the following
 ```
 BASEURL=https://raw.githubusercontent.com/jboss-fuse/application-templates/application-templates-2.1.0.fuse-770012-redhat-00004
@@ -288,7 +297,7 @@ oc get pods
 Create a secret using your [https://access.redhat.com](https://access.redhat.com/) credentials in the _soap-rest_ project
 ```
 oc project soap-rest
-oc create secret docker-registry threescale-registry-auth \
+oc create secret docker-registry my-registry-auth \
 --docker-server=registry.redhat.io \
 --docker-username="yourusername" \
 --docker-password="yourpassword"
@@ -312,7 +321,6 @@ Now manually add this port to the _stores-fis_ Service
       targetPort: 8778
 ```
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/22-stores-fis-service.png)
-
 
 
 ----------------------------------------------------------------------------------------------------
