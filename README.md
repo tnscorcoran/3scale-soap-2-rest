@@ -334,12 +334,17 @@ The final piece of the puzzle is applying API Management to our RESTful interfac
 
 Let's first add a backend in 3scale to our REST service. As described above, navigate to Dashboard -> BACKENDS and click NEW BACKEND. Populate the form with the following details:
 ```
-Name:               Stores SOAP Transformation Backend
-System Name:        stores-soap-trans-backend
-Description:        Stores SOAP transformation Backend
+Name:               Stores SOAP to REST Transformation Backend
+System Name:        stores-soap-rest-trans-backend
+Description:        Stores SOAP to REST Transformation Backend
 Private Base URL:   Populate with the output of the following:
-                    echo -en "\n\nhttp://stores-fis.$OCP_USERNAME-stores-api.svc.cluster.local:8080\n"
+                    echo -en "\n\nhttp://stores-fis.soap-rest.svc.cluster.local:8080\n"
 ```
+In my case, my _Private Base URL_ is: http://stores-fis.soap-rest.svc.cluster.local:8080
+
+Now we'll add the new Backend to our _API_ Product. With _Product: API_ selected on the top of the screen, navigate to Integration -> Backends and click _Add Backend_. Populate as follows, adding the new SOAP to REST backend with the path _/rest_:
+![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/26-soap-to-rest-add-backend-to-product.png)
+
 
 ----------------------------------------------------------------------------------------------------
 
