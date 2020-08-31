@@ -1,10 +1,5 @@
 # 3scale / Fuse SOAP and SOAP to REST demo
 
-
-# TODO
-# TODO - delete my URLS
-
-
 ## In this demo we 
 - setup 3scale on OpenShift
 - setup a simple SOAP service on OpenShift
