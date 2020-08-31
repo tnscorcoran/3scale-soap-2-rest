@@ -1,4 +1,4 @@
-# 3scale / Fuse SOAP and SOAP to REST demo
+# 3scale and SOAP API Management demo
 
 ## In this demo we 
 - setup 3scale on OpenShift
