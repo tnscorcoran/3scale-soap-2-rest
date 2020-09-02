@@ -262,7 +262,8 @@ Execute this periodically until _stores-fis-1-xxxxx_ is Ready with 1/1.
 ```
 oc get pods
 ```
-When that's ready, copy the OpenShift route to this _Stores-FIS_ (with the project soap-rest selected as shown)
+
+When the pods are ready, copy the OpenShift route to this _Stores-FIS_ (with the project soap-rest selected as shown)
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/20-stores-fis-route.png)
 
 Now in Postman, or your equivalent, make the API call. Simply append _/allstores_ to the route URL yoiu just copied:
@@ -340,6 +341,24 @@ In my case, my _Private Base URL_ is: http://stores-fis.soap-rest.svc.cluster.lo
 
 Now we'll add the new Backend to our _API_ Product. With _Product: API_ selected on the top of the screen, navigate to Integration -> Backends and click _Add Backend_. Populate as follows, adding the new SOAP to REST backend with the path _/rest_:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/26-soap-to-rest-add-backend-to-product.png)
+
+
+## New Method for getAllStores RESTful endpoint
+Create a New Method to gain visibility and control into our getAlllStores REST Endpoint.
+Click New Method and populate with the following values:
+```
+Friendly name:  REST All Stores
+System name:    rest-all-stores
+Description:    REST All Stores
+```
+
+Next we need to map incoming request to this new method. From the top panel, navigate to: API -> Integration -> Mapping Rules. Click _Add Mapping Rule_ and create one as follows:
+```
+Verb:               GET
+Pattern:            /rest/allstores
+Metric or Method:   REST All Stores
+Increment:          1
+```
 
 Now promote this to Staging as before on screen Integration -> Configuration. 
 
