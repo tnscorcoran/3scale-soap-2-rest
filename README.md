@@ -141,8 +141,7 @@ First we need to create the API Gateway Staging Route. To begin with we'll set a
 export GW_PROJECT=3scale
 ```
 
-====================In OpenShift, select the 3scale project
-In 3scale, which you should already have logged into above, select _Dashboard_ then _Backends_
+In OpenShift, select the 3scale project. Then, in 3scale, which you should already have logged into above, select _Dashboard_ then _Backends_
 
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/10-3scale-dashboard-backends.png)
 
