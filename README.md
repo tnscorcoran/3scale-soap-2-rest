@@ -141,7 +141,6 @@ First we need to create the API Gateway Staging Route. To begin with we'll set a
 export GW_PROJECT=3scale
 ```
 
-### Add Backend to product
 In OpenShift, select the 3scale project. Then, in 3scale, which you should already have logged into above, select _Dashboard_ then _Backends_
 
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/10-3scale-dashboard-backends.png)
@@ -339,6 +338,7 @@ Private Base URL:   Populate with the output of the following:
 ```
 In my case, my _Private Base URL_ is: http://stores-fis.soap-rest.svc.cluster.local:8080
 
+### Add Backend to product
 Now we'll add the new Backend to our _API_ Product. With _Product: API_ selected on the top of the screen, navigate to Integration -> Backends and click _Add Backend_. Populate as follows, adding the new SOAP to REST backend with the path _/rest_:
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/26-soap-to-rest-add-backend-to-product.png)
 
