@@ -134,13 +134,14 @@ Test it out in your favourite SOAP API testing tool. I use postman:
 
 ----------------------------------------------------------------------------------------------------
 
-## Manage that SOAP service in 3scale - coarse grained
+### Manage that SOAP service in 3scale - coarse grained
 
 First we need to create the API Gateway Staging Route. To begin with we'll set an environmental variable to hold our 3scale OpenShift project:
 ```
 export GW_PROJECT=3scale
 ```
 
+### Add Backend to product
 In OpenShift, select the 3scale project. Then, in 3scale, which you should already have logged into above, select _Dashboard_ then _Backends_
 
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/10-3scale-dashboard-backends.png)
