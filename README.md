@@ -328,6 +328,7 @@ You can now see get a visual representation of the Camel routes used to do the S
 
 The final piece of the puzzle is applying API Management to our RESTful interface to the SOAP backend.
 
+### Create Backend for SOAP to REST service
 Let's first add a backend in 3scale to our REST service. As described above, navigate to Dashboard -> BACKENDS and click NEW BACKEND. Populate the form with the following details:
 ```
 Name:               Stores SOAP to REST Transformation Backend
