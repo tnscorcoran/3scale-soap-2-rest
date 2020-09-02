@@ -230,6 +230,7 @@ System Name:    Stores/getAllStores
 Unit:           hits
 ```
 
+### Configure the SOAP Policy
 Now we configure the SOAP Policy. Navigate to: Stores SOAP Policy API → Integration → Configuration → edit APIcast configuration. Expand the Policies section. In the Policy Chain section, click Add Policy and select SOAP.
 In the Policy Chain section, use the up or down arrows to reorder the policies so that the SOAP policy is first, followed by the APIcast policy. Enter the following mapping rule:
 ```
