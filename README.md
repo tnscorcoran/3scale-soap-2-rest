@@ -343,7 +343,7 @@ Now we'll add the new Backend to our _API_ Product. With _Product: API_ selected
 ![](https://github.com/tnscorcoran/3scale-soap-2-rest/blob/master/_images/26-soap-to-rest-add-backend-to-product.png)
 
 
-## New Method for getAllStores RESTful endpoint
+### New Method for getAllStores RESTful endpoint
 Create a New Method to gain visibility and control into our getAlllStores REST Endpoint.
 Click New Method and populate with the following values:
 ```
