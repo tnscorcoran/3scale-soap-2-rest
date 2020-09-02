@@ -279,17 +279,6 @@ Then create a secret using them:
 oc create secret tls fuse75-console-tls-proxying --cert server.crt --key server.key
 ```
 
-Execute the following
-```
-BASEURL=https://raw.githubusercontent.com/jboss-fuse/application-templates/application-templates-2.1.0.fuse-770012-redhat-00004
-oc replace -n openshift -f ${BASEURL}/fis-image-streams.json
-oc new-app -f ${BASEURL}/fuse-console-namespace-os4.json
-```
-Again this may take a few minutes. Run this periodically until _fuse77-console-1-xxxxx_ is Ready with 1/1:
-```
-oc get pods
-```
-
 Create a secret using your [https://access.redhat.com](https://access.redhat.com/) credentials in the _soap-rest_ project
 ```
 oc project soap-rest
@@ -299,6 +288,17 @@ oc create secret docker-registry my-registry-auth \
 --docker-password="yourpassword"
 oc secrets link default my-registry-auth --for=pull
 oc secrets link builder my-registry-auth --for=pull
+```
+
+Execute the following
+```
+BASEURL=https://raw.githubusercontent.com/jboss-fuse/application-templates/application-templates-2.1.0.fuse-770012-redhat-00004
+oc replace -n openshift -f ${BASEURL}/fis-image-streams.json
+oc new-app -f ${BASEURL}/fuse-console-namespace-os4.json
+```
+Again this may take a few minutes. Run this periodically until _fuse77-console-1-xxxxx_ is Ready with 1/1:
+```
+oc get pods
 ```
 
 Set these variables on the _stores-fis_  deployment config to allow insecure connection from the Fuse console to the _Stores-Fis_ transformation service;
