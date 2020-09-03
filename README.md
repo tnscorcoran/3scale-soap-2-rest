@@ -81,7 +81,7 @@ Use your ADMIN_USER and ADMIN_PASSWORD credentials from the previous step and lo
 ## Setup a simple SOAP service on OpenShift
 
 We use a different repo for the SOAP and Fuse projects:
-__https://github.com/weimeilin79/3scale_development_labs.git__
+__https://github.com/tnscorcoran/3scale_development_labs.git__
 
 Clone that repo - and _cd_ into it.
 
